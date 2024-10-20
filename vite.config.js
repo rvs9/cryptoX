@@ -1,39 +1,39 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import fs from "fs";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import fs from 'fs';
 
 export default defineConfig({
   plugins: [react()],
   define: {
-    "process.env": {},
+    'process.env': {},
     global: {},
   },
   resolve: {
     alias: {
-      process: "process/browser",
-      stream: "stream-browserify",
-      zlib: "browserify-zlib",
-      util: "util",
+      process: 'process/browser',
+      stream: 'stream-browserify',
+      zlib: 'browserify-zlib',
+      util: 'util',
     },
   },
   build: {
     rollupOptions: {
-      external: ["fsevents"],
+      external: ['fsevents'],
     },
   },
   optimizeDeps: {
-    include: ["buffer"],
+    include: ['buffer'],
     esbuildOptions: {
       loader: {
-        ".js": "jsx",
+        '.js': 'jsx',
       },
       plugins: [
         {
-          name: "load-js-files-as-jsx",
+          name: 'load-js-files-as-jsx',
           setup(build) {
             build.onLoad({ filter: /src\/.*\.js$/ }, async (args) => ({
-              loader: "jsx",
-              contents: await fs.promises.readFile(args.path, "utf8"),
+              loader: 'jsx',
+              contents: await fs.promises.readFile(args.path, 'utf8'),
             }));
           },
         },
@@ -41,7 +41,7 @@ export default defineConfig({
     },
   },
   esbuild: {
-    loader: "jsx",
+    loader: 'jsx',
     include: /src\/.*\.jsx?$/,
     exclude: [],
   },
