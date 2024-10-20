@@ -34,7 +34,7 @@ const Footer = ({ darkMode }) => {
               <Globe size={24} />
             </a>
             <a
-              href="https://github.com/rvs9/"
+              href="https://github.com/rvs9/cryptoX"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-blue-500"
