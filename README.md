@@ -1,6 +1,8 @@
 CryptoX
 This decentralized application (dApp) allows users to send Ethereum transactions, view their transaction history, and manage their wallet connection. Built with modern web technologies, this app provides a seamless experience for interacting with the Ethereum blockchain.
 
+You can check it out here https://crypto-x-six.vercel.app/
+
 If you found this project helpful, please give it a ⭐️!
 
 -Features:
